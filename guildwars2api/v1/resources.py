@@ -50,3 +50,38 @@ class Skin(BaseResource):
 class SkinDetail(BaseResource):
     resource = "skin_details.json"
 
+
+class Continent(BaseResource):
+    resource = "continents.json"
+
+
+class Map(BaseResource):
+    resource = "maps.json"
+
+
+class MapFloor(BaseResource):
+    resource = "map_floor.json"
+
+
+class WvWMatch(BaseResource):
+    resource = "wvw/matches.json"
+
+
+class WvWMatchDetail(BaseResource):
+    resource = "wvw/match_details.json"
+
+
+class WvWObjectiveName(BaseResource):
+    resource = "wvw/objective_names.json"
+
+
+class Build(BaseResource):
+    resource = "build.json"
+
+
+class Color(BaseResource):
+    resource = "colors.json"
+
+
+class File(BaseResource):
+    resource = "files.json"

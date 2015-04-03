@@ -15,6 +15,15 @@ from .resources import (
     RecipeDetail,
     Skin,
     SkinDetail,
+    Continent,
+    Map,
+    MapFloor,
+    WvWMatch,
+    WvWMatchDetail,
+    WvWObjectiveName,
+    Build,
+    Color,
+    File,
 )
 
 
@@ -37,6 +46,15 @@ class GuildWars2API(BaseClient):
         self.recipe_details = self._register(RecipeDetail)
         self.skins = self._register(Skin)
         self.skin_detail = self._register(SkinDetail)
+        self.continents = self._register(Continent)
+        self.maps = self._register(Map)
+        self.map_floors = self._register(MapFloor)
+        self.matches = self._register(WvWMatch)
+        self.match_details = self._register(WvWMatchDetail)
+        self.objective_names = self._register(WvWObjectiveName)
+        self.build = self._register(Build)
+        self.colors = self._register(Color)
+        self.file = self._register(File)
 
     def _register(self, resource):
         return resource(self.host, self.session)
