@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import unittest
-from guildwars2api import GuildWars2API
+from guildwars2api.v2 import GuildWars2API
 
 
 class URLBuildTestCase(unittest.TestCase):
