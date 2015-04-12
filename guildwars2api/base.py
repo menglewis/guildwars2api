@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-import urllib
 import requests
+try:
+    from urllib import parse as urllib
+except ImportError:
+    import urllib
 
 
 class GuildWars2APIError(Exception):
