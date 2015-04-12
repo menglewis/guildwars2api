@@ -1,5 +1,5 @@
 ============
-V1 Resources
+V2 Resources
 ============
 
 The following Resources are supported by the version 2 wrapper class.
