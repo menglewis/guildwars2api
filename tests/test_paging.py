@@ -13,4 +13,4 @@ class PagingTestCase(unittest.TestCase):
         count = 0
         for w in worlds:
             count += 1
-        self.assertGreater(count, 20)
+        self.assertTrue(count > 20)
