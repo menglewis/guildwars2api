@@ -1,10 +1,16 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+from collections import Iterable
 import requests
 try:
     from urllib import parse as urllib
 except ImportError:
     import urllib
+
+try:
+    StringTypes = (str, unicode)
+except NameError:
+    StringTypes = (str,)
 
 
 class GuildWars2APIError(Exception):
@@ -28,6 +34,7 @@ class BaseClient(object):
 
 
 class BaseResource(object):
+
     """
     Base Class for a Guild Wars 2 Resource
     """
@@ -102,9 +109,10 @@ class BaseResource(object):
         url = "%s/%s" % (self.api_host, resource)
         params = ""
         if len(kwargs) > 0:
-            # Handle lists of things (e.g., ids) as a comma-sep string
             for arg in kwargs:
-                if hasattr(kwargs[arg], '__iter__'):
+                # Handle lists of things (e.g., ids) as a comma-sep string
+                if isinstance(kwargs[arg], Iterable) and \
+                        not isinstance(kwargs[arg], StringTypes):
                     kwargs[arg] = ','.join(str(x) for x in kwargs[arg])
             params = "?{0}".format(urllib.urlencode(kwargs))
         return "{url}{params}".format(url=url, params=params)
