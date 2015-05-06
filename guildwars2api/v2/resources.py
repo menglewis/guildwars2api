@@ -94,4 +94,3 @@ class Quaggan(BaseResource):
 
 class World(BaseResource):
     resource = "worlds"
-
