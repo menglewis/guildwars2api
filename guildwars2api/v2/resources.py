@@ -69,7 +69,33 @@ class Exchange(BaseResource):
             base_url = url_pieces[0]
             query_string = ""
 
-        return "{base_url}/{currency}?{query_string}".format(base_url=base_url, currency=currency, query_string=query_string)
+        return "{base_url}/{currency}?{query_string}".format(
+            base_url=base_url,
+            currency=currency,
+            query_string=query_string,
+        )
+
+
+class Transaction(BaseResource):
+    resource = "commerce/transactions"
+
+    def build_url(self, current_or_history=None, buy_or_sell=None, *args, **kwargs):
+        base_url = super(Transaction, self).build_url(self.resource, **kwargs)
+
+        if current_or_history is None:
+            return base_url
+
+        if buy_or_sell is None:
+            return "{base_url}/{current_or_history}".format(
+                base_url=base_url,
+                current_or_history=current_or_history,
+            )
+
+        return "{base_url}/{current_or_history}/{buy_or_sell}".format(
+            base_url=base_url,
+            current_or_history=current_or_history,
+            buy_or_sell=buy_or_sell,
+        )
 
 
 class Price(BaseResource):

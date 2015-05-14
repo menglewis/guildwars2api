@@ -11,6 +11,7 @@ from .resources import (
     Map,
     Listing,
     Exchange,
+    Transaction,
     Price,
     Build,
     Color,
@@ -36,6 +37,7 @@ class GuildWars2API(BaseClient):
         self.maps = self._register(Map)
         self.listings = self._register(Listing)
         self.exchange = self._register(Exchange)
+        self.transactions = self._register(Transaction)
         self.prices = self._register(Price)
         self.build = self._register(Build)
         self.colors = self._register(Color)
