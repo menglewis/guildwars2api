@@ -20,10 +20,12 @@ class GuildWars2APIError(Exception):
 class BaseClient(object):
     base_url = ''
 
-    def __init__(self, base_url=None, user_agent='Guild Wars 2 Python API Wrapper'):
+    def __init__(self, base_url=None, user_agent='Guild Wars 2 Python API Wrapper', api_key=None):
         self.session = requests.Session()
         self.session.headers.update(
             {'User-Agent': user_agent, 'Accept': 'application/json'})
+        if api_key:
+            self.session.headers.update({'Authorization': 'Bearer {0}'.format(api_key)})
         if base_url:
             self.host = base_url
         else:
@@ -31,6 +33,19 @@ class BaseClient(object):
 
     def _register(self, resource):
         return resource(self.host, self.session)
+
+    @property
+    def api_key(self):
+        if 'Authorization' in self.session.headers:
+            return self.session.headers.get('Authorization').replace('Bearer ', '')
+        return None
+
+    @api_key.setter
+    def api_key(self, api_key):
+        if api_key is None and 'Authorization' in self.session.headers:
+            del self.session.headers['Authorization']
+        else:
+            self.session.headers.update({'Authorization': 'Bearer {0}'.format(api_key)})
 
 
 class BaseResource(object):

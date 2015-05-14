@@ -24,8 +24,8 @@ class GuildWars2API(BaseClient):
 
     base_url = "https://api.guildwars2.com/v2"
 
-    def __init__(self, user_agent='Guild Wars 2 Python API Wrapper'):
-        super(GuildWars2API, self).__init__(user_agent=user_agent)
+    def __init__(self, user_agent='Guild Wars 2 Python API Wrapper', api_key=None):
+        super(GuildWars2API, self).__init__(user_agent=user_agent, api_key=api_key)
 
         self.items = self._register(Item)
         self.recipes = self._register(Recipe)
