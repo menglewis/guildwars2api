@@ -17,6 +17,14 @@ A Python Wrapper for the Guild Wars 2 API
 * Free software: BSD license
 * Documentation: https://guildwars2api.readthedocs.org.
 
+Installation
+------------
+
+This package is hosted on PyPI so it can be install using pip or easy_install
+
+    $ easy_install guildwars2api
+    $ pip install guildwars2api
+
 Features
 --------
 

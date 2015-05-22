@@ -14,13 +14,11 @@ requirements = [
     'requests'
 ]
 
-test_requirements = [
-    # TODO: put package test requirements here
-]
+test_requirements = []
 
 setup(
     name='guildwars2api',
-    version='0.1.0',
+    version='0.2.0',
     description='A Python API Wrapper for the Guild Wars 2 API',
     long_description=readme + '\n\n' + history,
     author='David Lewis',
@@ -44,7 +42,7 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Natural Language :: English',
-        "Programming Language :: Python :: 2",
+        'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
