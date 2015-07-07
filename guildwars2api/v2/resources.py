@@ -120,3 +120,43 @@ class Quaggan(BaseResource):
 
 class World(BaseResource):
     resource = "worlds"
+
+
+class Material(BaseResource):
+    resource = "materials"
+
+
+class Bank(BaseResource):
+    resource = "account/bank"
+
+
+class BankMaterial(BaseResource):
+    resource = "account/materials"
+
+
+class Character(BaseResource):
+    resource = "characters"
+
+
+class Inventory(BaseResource):
+    resource = "characters/{0}/inventory"
+
+    def build_url(self, character, *args, **kwargs):
+        base_url = super(Inventory, self).build_url(self.resource, **kwargs)
+        return base_url.format(character)
+
+
+class Equipment(BaseResource):
+    resource = "characters/{0}/equipment"
+
+    def build_url(self, character, *args, **kwargs):
+        base_url = super(Equipment, self).build_url(self.resource, **kwargs)
+        return base_url.format(character)
+
+
+class Account(BaseResource):
+    resource = "account"
+
+
+class TokenInfo(BaseResource):
+    resource = "tokeninfo"

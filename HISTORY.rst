@@ -3,6 +3,19 @@
 History
 -------
 
+0.3.0 (2015-07-06)
+------------------
+
+* Added the following resources
+* Materials
+* Bank
+* Bank Materials
+* Characters
+* Inventory
+* Equipment
+* Account
+* Token Info
+
 0.2.0 (2015-05-21)
 ------------------
 

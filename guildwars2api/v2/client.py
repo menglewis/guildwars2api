@@ -18,6 +18,14 @@ from .resources import (
     File,
     Quaggan,
     World,
+    Material,
+    Bank,
+    BankMaterial,
+    Character,
+    Inventory,
+    Equipment,
+    Account,
+    TokenInfo,
 )
 
 
@@ -44,6 +52,14 @@ class GuildWars2API(BaseClient):
         self.files = self._register(File)
         self.quaggans = self._register(Quaggan)
         self.worlds = self._register(World)
+        self.materials = self._register(Material)
+        self.bank = self._register(Bank)
+        self.bank_materials = self._register(BankMaterial)
+        self.characters = self._register(Character)
+        self.inventory = self._register(Inventory)
+        self.equipment = self._register(Equipment)
+        self.account = self._register(Account)
+        self.token_info = self._register(TokenInfo)
 
     def _register(self, resource):
         return resource(self.host, self.session)

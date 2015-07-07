@@ -18,7 +18,7 @@ class URLBuildTestCase(unittest.TestCase):
         self.assertEqual(self.api.items.build_url(ids="1051,1052"), 'https://api.guildwars2.com/v2/items?ids=1051%2C1052')
 
     def test_list_items_url(self):
-        self.assertEqual(self.api.items.build_url(ids=[1051,1052]), 'https://api.guildwars2.com/v2/items?ids=1051%2C1052')
+        self.assertEqual(self.api.items.build_url(ids=[1051, 1052]), 'https://api.guildwars2.com/v2/items?ids=1051%2C1052')
 
     def test_items_url_with_bad_param(self):
         self.assertEqual(self.api.items.build_url(testattr="food"), 'https://api.guildwars2.com/v2/items?testattr=food')
@@ -43,3 +43,27 @@ class URLBuildTestCase(unittest.TestCase):
 
     def test_transactions_history_sells(self):
         self.assertEqual(self.api.transactions.build_url('history', 'sells'), 'https://api.guildwars2.com/v2/commerce/transactions/history/sells')
+
+    def test_materials_url(self):
+        self.assertEqual(self.api.materials.build_url(), 'https://api.guildwars2.com/v2/materials')
+
+    def test_bank_url(self):
+        self.assertEqual(self.api.bank.build_url(), 'https://api.guildwars2.com/v2/account/bank')
+
+    def test_bank_materials_url(self):
+        self.assertEqual(self.api.bank_materials.build_url(), 'https://api.guildwars2.com/v2/account/materials')
+
+    def test_characters_url(self):
+        self.assertEqual(self.api.characters.build_url(), 'https://api.guildwars2.com/v2/characters')
+
+    def test_inventory_url(self):
+        self.assertEqual(self.api.inventory.build_url('Test Character'), 'https://api.guildwars2.com/v2/characters/Test Character/inventory')
+
+    def test_equipment_url(self):
+        self.assertEqual(self.api.equipment.build_url('Test Character'), 'https://api.guildwars2.com/v2/characters/Test Character/equipment')
+
+    def test_account_url(self):
+        self.assertEqual(self.api.account.build_url(), 'https://api.guildwars2.com/v2/account')
+
+    def test_tokeninfo_url(self):
+        self.assertEqual(self.api.token_info.build_url(), 'https://api.guildwars2.com/v2/tokeninfo')
