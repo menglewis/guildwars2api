@@ -67,3 +67,15 @@ class URLBuildTestCase(unittest.TestCase):
 
     def test_tokeninfo_url(self):
         self.assertEqual(self.api.token_info.build_url(), 'https://api.guildwars2.com/v2/tokeninfo')
+
+    def test_currency_url(self):
+        self.assertEqual(self.api.currencies.build_url(), 'https://api.guildwars2.com/v2/currencies')
+
+    def test_account_wallet_url(self):
+        self.assertEqual(self.api.account_wallet.build_url(), 'https://api.guildwars2.com/v2/account/wallet')
+
+    def test_account_dyes_url(self):
+        self.assertEqual(self.api.account_dyes.build_url(), 'https://api.guildwars2.com/v2/account/dyes')
+
+    def test_account_skins_url(self):
+        self.assertEqual(self.api.account_skins.build_url(), 'https://api.guildwars2.com/v2/account/skins')

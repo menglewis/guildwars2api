@@ -26,6 +26,10 @@ from .resources import (
     Equipment,
     Account,
     TokenInfo,
+    Currency,
+    AccountWallet,
+    AccountDye,
+    AccountSkin,
 )
 
 
@@ -60,6 +64,10 @@ class GuildWars2API(BaseClient):
         self.equipment = self._register(Equipment)
         self.account = self._register(Account)
         self.token_info = self._register(TokenInfo)
+        self.currencies = self._register(Currency)
+        self.account_wallet = self._register(AccountWallet)
+        self.account_dyes = self._register(AccountDye)
+        self.account_skins = self._register(AccountSkin)
 
     def _register(self, resource):
         return resource(self.host, self.session)

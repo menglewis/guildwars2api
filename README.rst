@@ -20,7 +20,7 @@ A Python Wrapper for the Guild Wars 2 API
 Installation
 ------------
 
-This package is hosted on PyPI so it can be install using pip or easy_install
+This package is hosted on PyPI so it can be install using pip or easy_install::
 
     $ easy_install guildwars2api
     $ pip install guildwars2api

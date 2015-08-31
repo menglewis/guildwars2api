@@ -160,3 +160,21 @@ class Account(BaseResource):
 
 class TokenInfo(BaseResource):
     resource = "tokeninfo"
+
+
+class Currency(BaseResource):
+    resource = "currencies"
+
+
+class AccountWallet(BaseResource):
+    resource = "account/wallet"
+
+
+class AccountDye(BaseResource):
+    resource = "account/dyes"
+
+
+class AccountSkin(BaseResource):
+    resource = "account/skins"
+
+
