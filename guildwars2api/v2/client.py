@@ -30,6 +30,9 @@ from .resources import (
     AccountWallet,
     AccountDye,
     AccountSkin,
+    PvPStat,
+    PvPGame,
+    Specialization,
 )
 
 
@@ -68,6 +71,9 @@ class GuildWars2API(BaseClient):
         self.account_wallet = self._register(AccountWallet)
         self.account_dyes = self._register(AccountDye)
         self.account_skins = self._register(AccountSkin)
+        self.pvp_stats = self._register(PvPStat)
+        self.pvp_games = self._register(PvPGame)
+        self.specializations = self._register(Specialization)
 
     def _register(self, resource):
         return resource(self.host, self.session)

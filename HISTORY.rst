@@ -3,6 +3,14 @@
 History
 -------
 
+0.5.0 (2015-09-08)
+------------------
+
+* Added the following resources
+* PvP Stats
+* PvP Games
+* Specializations
+
 0.4.0 (2015-08-30)
 ------------------
 

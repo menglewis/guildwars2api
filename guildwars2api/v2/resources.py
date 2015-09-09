@@ -178,3 +178,17 @@ class AccountSkin(BaseResource):
     resource = "account/skins"
 
 
+class PvPStat(BaseResource):
+    resource = "pvp/stats"
+
+
+class PvPGame(BaseResource):
+    resource = "pvp/games"
+
+
+class Specialization(BaseResource):
+    resource = "characters/{0}/specializations"
+
+    def build_url(self, character, *args, **kwargs):
+        base_url = super(Specialization, self).build_url(self.resource, **kwargs)
+        return base_url.format(character)

@@ -79,3 +79,12 @@ class URLBuildTestCase(unittest.TestCase):
 
     def test_account_skins_url(self):
         self.assertEqual(self.api.account_skins.build_url(), 'https://api.guildwars2.com/v2/account/skins')
+
+    def test_pvp_stats_url(self):
+        self.assertEqual(self.api.pvp_stats.build_url(), 'https://api.guildwars2.com/v2/pvp/stats')
+
+    def test_pvp_games_url(self):
+        self.assertEqual(self.api.pvp_games.build_url(), 'https://api.guildwars2.com/v2/pvp/games')
+
+    def test_specializations_url(self):
+        self.assertEqual(self.api.specializations.build_url('Test Character'), 'https://api.guildwars2.com/v2/characters/Test Character/specializations')
