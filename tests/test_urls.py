@@ -88,3 +88,27 @@ class URLBuildTestCase(unittest.TestCase):
 
     def test_specializations_url(self):
         self.assertEqual(self.api.specializations.build_url('Test Character'), 'https://api.guildwars2.com/v2/characters/Test Character/specializations')
+
+    def test_wvw_objectives_url(self):
+        self.assertEqual(self.api.wvw_objectives.build_url(), 'https://api.guildwars2.com/v2/wvw/objectives')
+
+    def test_wvw_objectives_url_id(self):
+        self.assertEqual(self.api.wvw_objectives.build_url(id='968-92'), 'https://api.guildwars2.com/v2/wvw/objectives?id=968-92')
+
+    def test_minis_url(self):
+        self.assertEqual(self.api.minis.build_url(), 'https://api.guildwars2.com/v2/minis')
+
+    def test_minis_url_id(self):
+        self.assertEqual(self.api.minis.build_url(id=378), 'https://api.guildwars2.com/v2/minis?id=378')
+
+    def test_account_minis_url(self):
+        self.assertEqual(self.api.account_minis.build_url(), 'https://api.guildwars2.com/v2/account/minis')
+
+    def test_achievements_url(self):
+        self.assertEqual(self.api.achievements.build_url(), 'https://api.guildwars2.com/v2/achievements')
+
+    def test_achievements_url_id(self):
+        self.assertEqual(self.api.achievements.build_url(id=1965), 'https://api.guildwars2.com/v2/achievements?id=1965')
+
+    def test_account_achievements(self):
+        self.assertEqual(self.api.account_achievements.build_url(), 'https://api.guildwars2.com/v2/account/achievements')

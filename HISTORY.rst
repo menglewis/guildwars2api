@@ -3,6 +3,16 @@
 History
 -------
 
+0.6.0 (2015-12-13)
+------------------
+
+* Added the following resources
+* WvW Objectives
+* Minis
+* Account Minis
+* Achievements
+* Account Achievements
+
 0.5.0 (2015-09-08)
 ------------------
 

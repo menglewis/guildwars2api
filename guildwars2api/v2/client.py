@@ -33,6 +33,11 @@ from .resources import (
     PvPStat,
     PvPGame,
     Specialization,
+    WvWObjective,
+    Mini,
+    AccountMini,
+    Achievement,
+    AccountAchievement,
 )
 
 
@@ -74,6 +79,11 @@ class GuildWars2API(BaseClient):
         self.pvp_stats = self._register(PvPStat)
         self.pvp_games = self._register(PvPGame)
         self.specializations = self._register(Specialization)
+        self.wvw_objectives = self._register(WvWObjective)
+        self.minis = self._register(Mini)
+        self.account_minis = self._register(AccountMini)
+        self.achievements = self._register(Achievement)
+        self.account_achievements = self._register(AccountAchievement)
 
     def _register(self, resource):
         return resource(self.host, self.session)

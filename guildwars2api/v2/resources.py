@@ -192,3 +192,23 @@ class Specialization(BaseResource):
     def build_url(self, character, *args, **kwargs):
         base_url = super(Specialization, self).build_url(self.resource, **kwargs)
         return base_url.format(character)
+
+
+class WvWObjective(BaseResource):
+    resource = "wvw/objectives"
+
+
+class Mini(BaseResource):
+    resource = "minis"
+
+
+class AccountMini(BaseResource):
+    resource = "account/minis"
+
+
+class Achievement(BaseResource):
+    resource = "achievements"
+
+
+class AccountAchievement(BaseResource):
+    resource = "account/achievements"
