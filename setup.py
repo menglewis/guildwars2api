@@ -18,7 +18,7 @@ test_requirements = []
 
 setup(
     name='guildwars2api',
-    version='0.7.0',
+    version='0.7.1',
     description='A Python API Wrapper for the Guild Wars 2 API',
     long_description=readme + '\n\n' + history,
     author='David Lewis',

@@ -3,6 +3,13 @@
 History
 -------
 
+0.7.1 (2016-02-07)
+------------------
+
+* Fixed an import bug with the GuildWars2ApiError
+* Removed a test case for pagination. Will refactor the test with mock on the API calls.
+
+
 0.7.0 (2016-02-07)
 ------------------
 
