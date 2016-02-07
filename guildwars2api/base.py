@@ -113,15 +113,13 @@ class BaseResource(object):
         url = self.build_url(*args, **kwargs)
         return self.session.get(url)
 
-    def build_url(self, resource=None, *args, **kwargs):
+    def build_url(self, *args, **kwargs):
         """
         Builds the URL using the base API host and the resource
         :param resource:
         :return:
         """
-        if resource is None:
-            resource = self.resource
-        url = "%s/%s" % (self.api_host, resource)
+        url = "%s/%s" % (self.api_host, self.resource.format(*args))
         params = ""
         if len(kwargs) > 0:
             for arg in kwargs:

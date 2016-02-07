@@ -38,6 +38,10 @@ from .resources import (
     AccountMini,
     Achievement,
     AccountAchievement,
+    GuildUpgrade,
+    GuildPermission,
+    GuildMember,
+    GuildRank,
 )
 
 
@@ -84,6 +88,10 @@ class GuildWars2API(BaseClient):
         self.account_minis = self._register(AccountMini)
         self.achievements = self._register(Achievement)
         self.account_achievements = self._register(AccountAchievement)
+        self.guild_upgrades = self._register(GuildUpgrade)
+        self.guild_permissions = self._register(GuildPermission)
+        self.guild_members = self._register(GuildMember)
+        self.guild_ranks = self._register(GuildRank)
 
     def _register(self, resource):
         return resource(self.host, self.session)

@@ -33,8 +33,8 @@ class Continent(BaseResource):
 class Floor(BaseResource):
     resource = "floors"
 
-    def build_url(self, continent_id=None, floor_id=None, **kwargs):
-        url_pieces = super(Floor, self).build_url(self.resource, **kwargs).split("?")
+    def build_url(self, continent_id=None, floor_id=None, *args, **kwargs):
+        url_pieces = super(Floor, self).build_url(*args, **kwargs).split("?")
         if len(url_pieces) > 1:
             base_url, query_string = url_pieces
         else:
@@ -62,7 +62,7 @@ class Exchange(BaseResource):
     resource = "commerce/exchange"
 
     def build_url(self, currency="coins", **kwargs):
-        url_pieces = super(Exchange, self).build_url(self.resource, **kwargs).split("?")
+        url_pieces = super(Exchange, self).build_url(**kwargs).split("?")
         if len(url_pieces) > 1:
             base_url, query_string = url_pieces
         else:
@@ -80,7 +80,7 @@ class Transaction(BaseResource):
     resource = "commerce/transactions"
 
     def build_url(self, current_or_history=None, buy_or_sell=None, *args, **kwargs):
-        base_url = super(Transaction, self).build_url(self.resource, **kwargs)
+        base_url = super(Transaction, self).build_url(**kwargs)
 
         if current_or_history is None:
             return base_url
@@ -141,17 +141,9 @@ class Character(BaseResource):
 class Inventory(BaseResource):
     resource = "characters/{0}/inventory"
 
-    def build_url(self, character, *args, **kwargs):
-        base_url = super(Inventory, self).build_url(self.resource, **kwargs)
-        return base_url.format(character)
-
 
 class Equipment(BaseResource):
     resource = "characters/{0}/equipment"
-
-    def build_url(self, character, *args, **kwargs):
-        base_url = super(Equipment, self).build_url(self.resource, **kwargs)
-        return base_url.format(character)
 
 
 class Account(BaseResource):
@@ -189,10 +181,6 @@ class PvPGame(BaseResource):
 class Specialization(BaseResource):
     resource = "characters/{0}/specializations"
 
-    def build_url(self, character, *args, **kwargs):
-        base_url = super(Specialization, self).build_url(self.resource, **kwargs)
-        return base_url.format(character)
-
 
 class WvWObjective(BaseResource):
     resource = "wvw/objectives"
@@ -212,3 +200,19 @@ class Achievement(BaseResource):
 
 class AccountAchievement(BaseResource):
     resource = "account/achievements"
+
+
+class GuildUpgrade(BaseResource):
+    resource = "guild/upgrades"
+
+
+class GuildPermission(BaseResource):
+    resource = "guild/permissions"
+
+
+class GuildMember(BaseResource):
+    resource = "guild/{0}/members"
+
+
+class GuildRank(BaseResource):
+    resource = "guild/{0}/ranks"

@@ -3,6 +3,17 @@
 History
 -------
 
+0.7.0 (2016-02-07)
+------------------
+
+* Refactored how URLs are constructed in the BaseResource class
+* Added the following resources
+* Guild Upgrade
+* Guild Permission
+* Guild Member
+* Guild Rank
+
+
 0.6.0 (2015-12-13)
 ------------------
 
